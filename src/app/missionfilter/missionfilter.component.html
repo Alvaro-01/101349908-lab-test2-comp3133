@@ -1,0 +1,5 @@
+<select (change)="onYearSelect($event.target.value)">
+    <option value="">Filter by Year</option>
+    <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+  </select>
+  
