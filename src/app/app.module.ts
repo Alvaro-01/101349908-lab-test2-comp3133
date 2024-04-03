@@ -1,24 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
-import { MissionlistComponent } from './missionlist/missionlist.component';
-import { MissiondetailsComponent } from './missiondetails/missiondetails.component';
-import { MissionfilterComponent } from './missionfilter/missionfilter.component';
+import { SpaceXService } from './space-x.service'; // Import SpaceXService
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MissionlistComponent,
-    MissiondetailsComponent,
-    MissionfilterComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([]),
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [SpaceXService], // Provide SpaceXService here
   bootstrap: [AppComponent]
 })
 export class AppModule { }
